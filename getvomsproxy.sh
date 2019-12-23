@@ -4,6 +4,9 @@ INPUT_PLAIN_CERT_PATH="./plainproxy.pem"
 OUTPUT_VOMS_CERT_PATH="./vomsproxy.pem"
 VOMS_STRING="virgo:/virgo/virgo"
 
+echo "Extending with $VOMS_STRING attributes a plain GRID proxy at $INPUT_PLAIN_CERT_PATH with duration of 12h."
+echo "Output VOMS-extended certificate at $OUTPUT_VOMS_CERT_PATH"
+
 if [[ -f "$INPUT_PLAIN_CERT_PATH" ]]; then
     if [[ -f "$OUTPUT_VOMS_CERT_PATH" ]]; then
         echo "Output certificate path not empty: $OUTPUT_VOMS_CERT_PATH"
