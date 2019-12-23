@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PLAIN_CERT_PATH="./plainproxy.pem"
+
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
     DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
@@ -8,6 +10,8 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
-bash $DIR/generateplainproxy.sh
+if [[ ! -f "$PLAIN_CERT_PATH"]]
+    bash $DIR/generateplainproxy.sh
+fi
 bash $DIR/getvomsproxy.sh
 source $DIR/replacecurrentproxy.sh

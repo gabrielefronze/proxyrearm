@@ -7,7 +7,7 @@ if [[ -f "$INPUT_PLAIN_CERT_PATH" ]]; then
 
     export OLD_X509_USER_PROXY=$X509_USER_PROXY
 
-    export X509_USER_PROXY=$VOMS_CERT_PATH
+    export X509_USER_PROXY="$VOMS_CERT_PATH"
 
     echo "Replaced with proxy at: $X509_USER_PROXY"
     echo "Previous proxy still available at (OLD_X509_USER_PROXY): $OLD_X509_USER_PROXY"
