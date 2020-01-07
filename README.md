@@ -22,7 +22,7 @@ This will generate a `plainproxy.pem` and a `vomsproxy.pem` alongside the script
     ./generateplainproxy.sh
     ```
     Input your credential password when prompted.
-    Note that this is needed if end only if a valid `plainproxy.pem` is not present in the same directory of the scripts.
+    Note that this is needed if and only if a valid `plainproxy.pem` is not present in the same directory of the scripts.
 
 2. Generate a VOMS-extended proxy from the plain GRID proxy you have just generated:
     ```
