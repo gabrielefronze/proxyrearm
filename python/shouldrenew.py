@@ -2,24 +2,20 @@
 
 import subprocess
 
-def shouldRenew():
-    maxValidity=12*60*60
-    threshold=10*60
-
+def getRemainingValidity():
     command="voms-proxy-info --timeleft"
 
     try:
         output = subprocess.check_output(command.split())
     except:
-        return True
+        return -1
 
-    if isinstance(output, str):
-        print("is string")
-        return True # In case no proxy is found
+    return (int)(output)
 
-    remainingValidity = (int)(output)
+def shouldRenew():
+    threshold=(int)(0.10 * 12 * 60 * 60)
 
-    if remainingValidity > threshold:
+    if getRemainingValidity() > threshold and getRemainingValidity() > 0:
         return False # In that case do not renew
     else:
         return True # In that case should renew ASAP
