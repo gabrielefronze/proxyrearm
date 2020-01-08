@@ -12,9 +12,7 @@ def getRemainingValidity():
 
     return (int)(output)
 
-def shouldRenew():
-    threshold=(int)(0.10 * 12 * 60 * 60)
-
+def shouldRenew(threshold = (int)(0.10 * 12 * 60 * 60)):
     if getRemainingValidity() > threshold and getRemainingValidity() > 0:
         return False # In that case do not renew
     else:
