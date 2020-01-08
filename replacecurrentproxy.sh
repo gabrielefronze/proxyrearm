@@ -2,7 +2,7 @@
 
 VOMS_CERT_PATH="./vomsproxy.pem"
 
-if [[ -f "$INPUT_PLAIN_CERT_PATH" ]]; then
+if [[ -f "$VOMS_CERT_PATH" ]]; then
     echo "Current proxy is at: $X509_USER_PROXY"
 
     export OLD_X509_USER_PROXY=$X509_USER_PROXY
