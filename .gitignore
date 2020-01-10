@@ -2,3 +2,4 @@
 *.pem
 
 .vscode/
+python/__pycache__
