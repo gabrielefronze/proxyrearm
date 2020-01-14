@@ -12,8 +12,8 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 if [[ ! -f "$PLAIN_CERT_PATH" ]]; then
     echo "Plain grid proxy not found. Generating one."
-    bash $DIR/generateplainproxy.sh
+    bash $DIR/generateplainproxy.sh "$1"
 fi
 
-bash $DIR/getvomsproxy.sh
+bash $DIR/getvomsproxy.sh "$1"
 source $DIR/replacecurrentproxy.sh
