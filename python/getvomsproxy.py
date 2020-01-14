@@ -24,7 +24,7 @@ def getVOMSProxy(_inputPlainCertPath, _outputVOMSCertPath, _VOMSID):
             except SyntaxError:
                 pass
 
-        command = "voms-proxy-init -cert {} -n -voms {} --out {}".format(_inputPlainCertPath, _VOMSID, _outputVOMSCertPath)
+        command = "voms-proxy-init -cert {} -n --voms {} --out {}".format(_inputPlainCertPath, _VOMSID, _outputVOMSCertPath)
         output = subprocess.call(command.split())
     else:
         print("Input certificate not found at: {}".format(_inputPlainCertPath))
